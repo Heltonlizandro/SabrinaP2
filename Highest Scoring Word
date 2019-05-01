@@ -1,0 +1,43 @@
+//https://www.codewars.com/kata/57eb8fcdf670e99d9b000272
+
+public class Kata {
+
+  public static String high(String s) {
+    // Your code here...
+    		String Retorno = "";
+		String vlTexto = "";
+		
+		int vlrTexto = 0, vlrTexto2 = 0 ;
+		String[] alfabeto = {"-","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
+		
+		
+		for (int i = 0; i < s.length(); i++) {
+			if (s.charAt(i) == ' ') {
+				if (vlrTexto > vlrTexto2) {
+					vlrTexto2 = vlrTexto;
+					Retorno = vlTexto;
+				}
+
+				vlrTexto = 0;
+				vlTexto = "";
+				continue;
+			}
+			
+			for (int x = 0; x < alfabeto.length; x++) {
+				if (s.charAt(i) == alfabeto[x].charAt(0)) {
+					vlTexto += ""+s.charAt(i);
+					vlrTexto += x;
+					break;
+			    }
+			 }
+		}
+		
+		if (vlrTexto > vlrTexto2) {
+			vlrTexto2 = vlrTexto;
+			Retorno = vlTexto;
+		}
+		
+	    return Retorno;
+  }
+
+}
