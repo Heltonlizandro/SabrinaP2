@@ -1,5 +1,23 @@
 //https://www.codewars.com/kata/589d36bbb6c071f7c20000f7
 
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import org.junit.runners.JUnit4;
+
+public class SampleTestsJava {
+    @Test
+    public void sampleTests() {
+        assertEquals(true, Kata.primeString("abac"));
+        assertEquals(false, Kata.primeString("abab"));
+        assertEquals(false, Kata.primeString("aaaa"));
+        assertEquals(true, Kata.primeString("x"));
+        assertEquals(true, Kata.primeString("abc"));
+        assertEquals(false, Kata.primeString("fdsyffdsyffdsyffdsyffdsyf"));
+        assertEquals(true, Kata.primeString("utdutdtdutd"));
+        assertEquals(true, Kata.primeString("abba"));
+    }
+}
+
 public class Kata {
     public static boolean primeString(String s) {
         // Implement me! :)
