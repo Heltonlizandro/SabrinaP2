@@ -1,5 +1,16 @@
 //https://www.codewars.com/kata/54ff3102c1bad923760001f3
 
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+
+public class VowelsTest {
+    @Test
+    public void testCase1() {
+      assertEquals("Nope!", 5, Vowels.getCount("abracadabra"));
+    }
+    
+}
+
 public class Vowels {
 
   public static int getCount(String str) {
