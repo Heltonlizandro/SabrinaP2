@@ -1,0 +1,81 @@
+//https://www.codewars.com/kata/589d36bbb6c071f7c20000f7
+
+public class Kata {
+    public static boolean primeString(String s) {
+        // Implement me! :)
+    String var1 = "", var2 = "", vlIgual = "";
+		int tamIni = 2;
+		int totRep = 0;
+		boolean retorno = true;
+		boolean repetido = true;
+				
+		if (s.length() == 1) {
+			return true;
+		}
+		
+		var1 = ""+s.charAt(0);
+		
+		for (int i = 0; i < s.length(); i++) {
+			var2 = ""+s.charAt(i);
+			if (var1.equals(var2)) {
+				totRep++;				
+			}
+		}
+		
+		if (totRep == s.length()) {
+			return false;
+		}		
+		
+		
+		for (int i = 1; i < s.length(); i++) {
+			var1 = "";
+			for (int y = 0; y < tamIni; y++) {
+				var1 += s.charAt(y);
+			}
+
+			tamIni++;
+
+			var2 = "";
+			for (int j = var1.length(); j < s.length(); j++) {
+				if (var2.length() <= var1.length()) {
+					var2 += ""+s.charAt(j); 
+				}
+				
+				if (var2.length() == var1.length()) {
+					if (var1.equals(var2)){
+						vlIgual = var1;
+						retorno = false;
+					}
+				}
+			}
+			
+			/*if (s.length() == var2.length()) {
+				return true;
+			}*/
+		}
+		
+
+		if (retorno == false) {
+			var1 = vlIgual;
+			retorno = true;
+			
+			for (int j = var1.length(); j < s.length(); j++) {
+				if (var2.length() <= var1.length()) {
+					var2 += ""+s.charAt(j); 
+				}
+				
+				if (var2.length() == var1.length()) {
+										
+					if (var1.equals(var2)){
+						var2 = "";
+						retorno = false;
+					}
+					else
+						return true;
+				}
+			}			
+		}
+		
+		return retorno;
+    }
+}
